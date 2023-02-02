@@ -16,4 +16,4 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
- Route::get('specify',[App\Http\Controllers\HandlerController::class,'index']);
+ Route::get0('specify',[App\Http\Controllers\HandlerController::class,'index']);

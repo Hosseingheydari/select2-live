@@ -9,7 +9,7 @@
             <div class="card-body">
                 <div><p>استان خود را انتخاب کنید</p>
                 
-                    <select wire:model="selectedOstanId" id="ostan" class="select2" >//wire:change
+                    <select wire:model="selectedOstanId" id="ostan" wire:change= "getCityByOstanId" class="select2" >//wire:change
                         <option value="">select one</option>
 
                         @forelse ($ostans as $ostan)
@@ -23,7 +23,7 @@
                     {{-- @dd($cities) --}}
                 <div><p>شهر خود را انتخاب کنید</p>
 
-                    <select wire:model="selectedCityId" id="city" class="select2" >
+                    <select wire:model="selectedCityId" wire:change= "getUniversityByCityId" id="city" class="select2" >
                     <option value=" "></option>
                     @forelse ($cities as $city)
                   
@@ -46,17 +46,22 @@
         $('.select2').select2();
 
         $('#ostan').on('change',function(){
-         let id = $(this).val();
-         @this.set('selectedOstanId',id) ;
-         livewire.emit('getCityByOstanId');
-        
-         $('#city').on('change',function(){
             let id = $(this).val();
-            @this.set('selectedCityId',id)
+            @this.set('selectedOstanId',id) ;
+            livewire.emit('getCityByOstanId');
+        })   
+        $('#city').on('change',function(){
+            let id2 = $(this).val();
+            @this.set('selectedCityId',id2)
             livewire.emit('getUniversityByCityId')
+     
         })
-         
-        })
+        
+    })
+
+    window.addEventListener('select2_event',function (){
+        $('.select2').select2();
+
     })
 
 
