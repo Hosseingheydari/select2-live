@@ -4,9 +4,7 @@
 @section('content')
 
 <div>
-    @livewire('specification')
- 
- 
+    @livewire('panel')
 </div>
 
 @livewireScripts

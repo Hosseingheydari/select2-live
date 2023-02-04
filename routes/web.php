@@ -16,4 +16,6 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
- Route::get0('specify',[App\Http\Controllers\HandlerController::class,'index']);
+ Route::get('panel',[App\Http\Controllers\HandlerController::class,'index']);
+ Route::get('ll',App\Http\livewire\Panel::class);
+ 
