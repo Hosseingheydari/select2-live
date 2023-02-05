@@ -18,4 +18,6 @@ Route::get('/', function () {
 });
  Route::get('panel',[App\Http\Controllers\HandlerController::class,'index']);
  Route::get('ll',App\Http\livewire\Panel::class);
+ Route::get('uplodeVideo',App\Http\livewire\VideoController::class);
+
  
