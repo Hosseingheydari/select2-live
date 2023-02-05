@@ -1,5 +1,5 @@
 <div>
-    <!-- <x-navbar /> -->
+    <x-navbar />
     <x-slide-show />
     <div class="container">
         <div class="row mt-2">
